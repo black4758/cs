@@ -8,6 +8,7 @@
 .
 ├── spring-concepts
 │   ├── bean.md
+│   ├── jpa.md
 │   ├── spring-mvc-rest-flow.md
 │   └── spring.md
 └── spring-structure
@@ -24,6 +25,7 @@
 
 - [spring.md](spring-concepts/spring.md): Spring 기본 개념, Spring Boot 특징, Spring Container, IoC/DI, PSA, POJO
 - [bean.md](spring-concepts/bean.md): Bean 개념, Bean 생명주기, Bean 등록 어노테이션
+- [jpa.md](spring-concepts/jpa.md): JPA, ORM, Hibernate, Spring Data JPA, 영속성 컨텍스트, 변경 감지
 - [spring-mvc-rest-flow.md](spring-concepts/spring-mvc-rest-flow.md): Spring MVC REST 요청 흐름
 
 ### spring-structure
