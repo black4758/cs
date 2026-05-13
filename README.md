@@ -11,6 +11,7 @@
 │   ├── spring-mvc-rest-flow.md
 │   └── spring.md
 └── spring-structure
+    ├── controller.md
     ├── dto.md
     ├── entity.md
     ├── repository.md
@@ -27,6 +28,7 @@
 
 ### spring-structure
 
+- [controller.md](spring-structure/controller.md): Controller 계층, 요청 데이터 처리, 인증 사용자 정보
 - [entity.md](spring-structure/entity.md): Entity 개념과 JPA 엔티티 작성 방식
 - [dto.md](spring-structure/dto.md): Request DTO와 Response DTO
 - [repository.md](spring-structure/repository.md): Repository, JpaRepository, Query Method, @Query
