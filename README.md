@@ -12,6 +12,7 @@
 │   ├── spring-mvc-rest-flow.md
 │   └── spring.md
 └── spring-structure
+    ├── auth.md
     ├── controller.md
     ├── dto.md
     ├── entity.md
@@ -30,6 +31,7 @@
 
 ### spring-structure
 
+- [auth.md](spring-structure/auth.md): 회원가입, 로그인, Spring Security, JWT, 토큰, 인증 필터
 - [controller.md](spring-structure/controller.md): Controller 계층, 요청 데이터 처리, 인증 사용자 정보
 - [entity.md](spring-structure/entity.md): Entity 개념과 JPA 엔티티 작성 방식
 - [dto.md](spring-structure/dto.md): Request DTO와 Response DTO

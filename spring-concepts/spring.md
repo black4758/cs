@@ -94,7 +94,65 @@ PSA 예시:
 - Spring Data JPA
 - Spring Cache
 
-## 5. POJO
+## 5. AOP
+
+AOP는 Aspect Oriented Programming의 약자이며, 관점 지향 프로그래밍이라고 한다.
+
+여러 곳에서 반복되는 공통 기능을 핵심 비즈니스 로직과 분리해서 따로 관리하는 개념이다.
+
+예를 들어 다음과 같은 기능은 여러 메서드에서 반복될 수 있다.
+
+- 로깅
+- 트랜잭션
+- 보안
+- 실행 시간 측정
+- 예외 처리
+
+이런 공통 기능을 각 비즈니스 로직에 직접 작성하면 중복 코드가 많아지고 핵심 로직이 지저분해질 수 있다. AOP는 이런 공통 관심사를 분리해서 필요한 곳에 적용할 수 있게 해준다.
+
+예시:
+
+```java
+@Aspect
+@Component
+public class LogAspect {
+
+    @Around("execution(* com.example.service.*.*(..))")
+    public Object log(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("메서드 시작: " + joinPoint.getSignature().getName());
+
+        Object result = joinPoint.proceed();
+
+        System.out.println("메서드 종료: " + joinPoint.getSignature().getName());
+
+        return result;
+    }
+}
+```
+
+흐름:
+
+```text
+Service 메서드 호출
+→ AOP가 먼저 가로챔
+→ 공통 기능 실행
+→ 실제 비즈니스 로직 실행
+→ 공통 기능 실행
+→ 응답 반환
+```
+
+면접 답변:
+
+> AOP는 관점 지향 프로그래밍으로, 로깅, 트랜잭션, 보안처럼 여러 곳에서 반복되는 공통 관심사를 핵심 비즈니스 로직과 분리해서 모듈화하는 개념입니다. 이를 통해 중복 코드를 줄이고 핵심 로직에 집중할 수 있습니다.
+
+용어 정리:
+
+- Aspect: 공통 기능을 모아둔 클래스
+- Advice: 실제로 실행되는 공통 기능
+- Pointcut: 공통 기능을 어디에 적용할지 정하는 조건
+- JoinPoint: AOP가 적용될 수 있는 지점
+
+## 6. POJO
 
 POJO는 Plain Old Java Object의 약자이다.
 
@@ -120,7 +178,7 @@ public class Member {
 
 > POJO는 특정 프레임워크나 기술에 종속되지 않는 순수한 Java 객체를 의미합니다. Spring은 POJO 기반 개발을 지원해서 비즈니스 로직이 특정 기술에 강하게 의존하지 않도록 하고, 테스트와 유지보수를 쉽게 만들어줍니다.
 
-## 6. Spring Container
+## 7. Spring Container
 
 Spring Container는 Spring Bean을 생성하고 관리하는 핵심 객체이다.
 
@@ -161,7 +219,7 @@ public class OrderService {
 
 실무에서는 대부분 `ApplicationContext`를 사용한다.
 
-## 7. IoC/DI
+## 8. IoC/DI
 
 ### IoC
 
@@ -197,6 +255,6 @@ public class OrderService {
 
 > IoC는 객체의 생성과 제어권을 개발자가 아니라 Spring 컨테이너가 가지는 것을 의미합니다. DI는 IoC를 구현하는 대표적인 방법으로, 객체가 필요한 의존성을 직접 생성하지 않고 외부에서 주입받는 방식입니다. 이를 통해 객체 간 결합도를 낮추고 테스트와 유지보수를 쉽게 할 수 있습니다.
 
-## 8. 한 번에 외우는 면접 답변
+## 9. 한 번에 외우는 면접 답변
 
 > Spring은 Java 기반의 백엔드 애플리케이션 프레임워크입니다. 핵심 개념으로는 POJO, IoC/DI, AOP, PSA가 있습니다. POJO는 특정 기술에 종속되지 않는 순수 Java 객체를 의미하고, IoC/DI는 객체의 생성과 의존성 관리를 Spring 컨테이너가 담당하게 하는 개념입니다. AOP는 트랜잭션이나 로깅 같은 공통 관심사를 핵심 로직과 분리하는 것이고, PSA는 특정 기술에 종속되지 않고 일관된 방식으로 서비스를 사용할 수 있게 해주는 추상화입니다. Spring Boot는 이러한 Spring을 더 쉽게 사용할 수 있도록 자동 설정, Starter, 내장 서버를 제공하는 프레임워크입니다.
