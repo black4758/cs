@@ -17,6 +17,7 @@
     ├── controller.md
     ├── dto.md
     ├── entity.md
+    ├── exception.md
     ├── repository.md
     └── service.md
 ```
@@ -36,6 +37,7 @@
 - [auth.md](spring-structure/auth.md): 회원가입, 로그인, Spring Security, JWT, 토큰, 인증 필터
 - [controller.md](spring-structure/controller.md): Controller 계층, 요청 데이터 처리, 인증 사용자 정보
 - [entity.md](spring-structure/entity.md): Entity 개념과 JPA 엔티티 작성 방식
+- [exception.md](spring-structure/exception.md): 예외 처리, ErrorCode, CustomException, GlobalExceptionHandler
 - [dto.md](spring-structure/dto.md): Request DTO와 Response DTO
 - [repository.md](spring-structure/repository.md): Repository, JpaRepository, Query Method, @Query
 - [service.md](spring-structure/service.md): Service 계층, 트랜잭션, 생성자 주입, 변경 감지
