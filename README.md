@@ -6,6 +6,9 @@
 
 ```text
 .
+├── javascript-concepts
+│   ├── javascript.md
+│   └── variables.md
 ├── spring-concepts
 │   ├── aop.md
 │   ├── bean.md
@@ -23,6 +26,11 @@
 ```
 
 ## Contents
+
+### javascript-concepts
+
+- [javascript.md](javascript-concepts/javascript.md): JavaScript 개념과 Vue 전 필수 학습 내용
+- [variables.md](javascript-concepts/variables.md): JavaScript 변수, var, let, const 차이
 
 ### spring-concepts
 
